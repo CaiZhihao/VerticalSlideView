@@ -41,6 +41,7 @@ public class VerticalSlide extends ViewGroup {
 
     public interface OnShowNextPageListener {
         void onShowNextPage();
+        void onShowPrePage();
     }
 
     private OnGoTopListener goTopListener;          // 快速返回顶部的监听
@@ -156,6 +157,7 @@ public class VerticalSlide extends ViewGroup {
                 if (yvel > VEL_THRESHOLD || releasedChild.getTop() > DISTANCE_THRESHOLD) {
                     // 向下滚动到初始状态
                     finalTop = viewHeight;
+                    if (null != nextPageListener) nextPageListener.onShowPrePage();
                 }
             }
             //触发缓慢滚动

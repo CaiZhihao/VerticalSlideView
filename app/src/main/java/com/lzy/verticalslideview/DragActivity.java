@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
 
 import com.lzy.verticalslideview.fragment.BaseFragment;
 import com.lzy.verticalslideview.fragment.Fragment_GridView;
@@ -56,6 +57,12 @@ public class DragActivity extends AppCompatActivity implements View.OnClickListe
                 public void onShowNextPage() {
                     ((Fragment_WebView) bottomFragment).initView();
                 }
+
+                @Override
+                public void onShowPrePage() {
+                    Toast.makeText(DragActivity.this, "回来了", Toast.LENGTH_SHORT).show();
+                }
+
             });
         }
         transaction.replace(R.id.second, bottomFragment);
