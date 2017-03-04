@@ -35,6 +35,12 @@ public class Fragment_RecyclerView extends BaseFragment {
         recyclerView.goTop();
     }
 
+
+    @Override
+    public void goBottom() {
+        recyclerView.scrollToPosition(recyclerView.getLayoutManager().getChildCount());
+    }
+
     private class MyAdapter extends RecyclerView.Adapter<MyAdapter.SimpleViewHolder> {
 
         private List<String> strings;

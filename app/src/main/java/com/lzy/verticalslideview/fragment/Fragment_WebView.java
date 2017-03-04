@@ -36,4 +36,9 @@ public class Fragment_WebView extends BaseFragment {
     public void goTop() {
         webview.goTop();
     }
+
+    @Override
+    public void goBottom() {
+
+    }
 }

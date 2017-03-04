@@ -57,6 +57,12 @@ public class Fragment_ListView extends BaseFragment {
         listview.goTop();
     }
 
+
+    @Override
+    public void goBottom() {
+
+    }
+
     private class MyAdapter extends BaseAdapter {
 
         private List<String> strings;

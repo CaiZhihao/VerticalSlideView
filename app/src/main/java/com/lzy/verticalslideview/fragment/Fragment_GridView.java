@@ -70,4 +70,10 @@ public class Fragment_GridView extends BaseFragment {
             return strings.size();
         }
     }
+
+
+    @Override
+    public void goBottom() {
+
+    }
 }

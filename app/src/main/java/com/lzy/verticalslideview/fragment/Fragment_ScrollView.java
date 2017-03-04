@@ -28,4 +28,10 @@ public class Fragment_ScrollView extends BaseFragment {
     public void goTop() {
         scrollView.goTop();
     }
+
+
+    @Override
+    public void goBottom() {
+
+    }
 }

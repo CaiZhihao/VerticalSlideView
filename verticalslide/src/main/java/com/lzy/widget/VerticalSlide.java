@@ -75,7 +75,7 @@ public class VerticalSlide extends ViewGroup {
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        System.out.println("onLayout:" + l + " " + t + " " + r + " " + b);
+        //System.out.println("onLayout:" + l + " " + t + " " + r + " " + b);
         if (view1 == null) view1 = getChildAt(0);
         if (view2 == null) view2 = getChildAt(1);
         //当滑倒第二页时，第二页的 top 为 0，第一页为 负数。
@@ -200,6 +200,18 @@ public class VerticalSlide extends ViewGroup {
             if (mDragHelper.smoothSlideViewTo(view2, 0, viewHeight)) {
                 ViewCompat.postInvalidateOnAnimation(this);
                 isGoTop = true;
+            }
+        }
+    }
+
+    /** 滚动到底部 */
+    public void goBottom(OnGoTopListener goTopListener) {
+        if (goTopListener != null) goTopListener.goTop();
+        if (currentPage == 1) {
+            //触发缓慢滚动
+            if (mDragHelper.smoothSlideViewTo(view1, 0, -viewHeight)) {
+                ViewCompat.postInvalidateOnAnimation(this);
+                isGoTop = false;
             }
         }
     }

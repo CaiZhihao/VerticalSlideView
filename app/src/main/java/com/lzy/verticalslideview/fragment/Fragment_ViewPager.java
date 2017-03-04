@@ -33,6 +33,11 @@ public class Fragment_ViewPager extends BaseFragment {
     public void goTop() {
     }
 
+    @Override
+    public void goBottom() {
+
+    }
+
     private class MyPagerAdapter extends FragmentPagerAdapter {
         private ArrayList<String> titles;
 

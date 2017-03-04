@@ -80,11 +80,18 @@ public class DragActivity extends AppCompatActivity implements View.OnClickListe
          * OnGoTopListener 表示第一页滚动到顶部 的方法,这个由于采用什么布局,库内部并不知道,所以一般是自己实现
          * 也可以不实现,直接传null
          */
-        bottomFragment.goTop();
+        /*bottomFragment.goTop();
         verticalSlide.goTop(new VerticalSlide.OnGoTopListener() {
             @Override
             public void goTop() {
                 topFragment.goTop();
+            }
+        });*/
+        topFragment.goBottom();
+        verticalSlide.goBottom(new VerticalSlide.OnGoTopListener() {
+            @Override
+            public void goTop() {
+                bottomFragment.goTop();
             }
         });
     }
