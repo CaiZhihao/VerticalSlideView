@@ -93,7 +93,7 @@ public class VerticalRecyclerView extends RecyclerView implements ObservableView
                     }
                 } else {
                     //水平方向滑动
-                    allowParentTouchEvent = true;
+                    allowParentTouchEvent = false;
                 }
                 getParent().requestDisallowInterceptTouchEvent(!allowParentTouchEvent);
         }
